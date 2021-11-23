@@ -123,22 +123,22 @@ def sigma2_radius(R):
     return y
 
 def sigma2_mass(M):
-    y=(sigma8**2)*(M/M8)**((-3-n)/6)
+    y=(sigma8**2)*(M/M8)**(-2/3)
     return y
 
 Radii=np.linspace(0,10,1000)
-Masses=np.linspace(0,1e14,1000)
+Masses=np.linspace(0,10,1000)
 
 plt.figure(4)
-plt.loglog(Radii,sigma2_radius(Radii))
-plt.title('Press-Schechter mass function as function of Radius')
+plt.semilogy(Radii,sigma2_radius(Radii))
+plt.title('$\sigma^2$ vs $R$')
 plt.xlabel('R [Mpc]')
 plt.ylabel('$\sigma^2$')
 plt.savefig('plots/2a.png',dpi=400,bbox_inches='tight')
 
 plt.figure(5)
-plt.loglog(Masses,sigma2_mass(Masses))
-plt.title('Press-Schechter mass function as function of Mass')
+plt.semilogy(Masses,sigma2_mass(Masses))
+plt.title('$\sigma^2$ vs $M$')
 plt.xlabel('M [$M_{\odot}$]')
 plt.ylabel('$\sigma^2$')
 plt.savefig('plots/2b.png',dpi=400,bbox_inches='tight')
