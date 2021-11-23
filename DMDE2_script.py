@@ -95,8 +95,8 @@ ok so i now think the problem is with the firsdt plot not the second one. See Sc
 Part c) plot a z=0 together with part b to compare them.
 '''
 plt.figure(3)
-plt.loglog(k_h,P(k_h)/max(P(k_h)),label='z=0, approximation')
-plt.loglog(kh,pk[0,:]/max(pk[0,:]),label='$z=$0.0 (CAMB)')
+plt.loglog(k_h,P(k_h)/(P(k_h)[0]),label='z=0, approximation')
+plt.loglog(kh,pk[0,:]/(pk[0,0]),label='$z=$0.0 (CAMB)')
 plt.title('Power spectrum comparison')
 plt.xlabel('$k$')
 plt.ylabel('$P(k,z=0)$')
